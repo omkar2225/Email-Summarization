@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "Summarise for Email",
+    "short_name": "Summarise",
+    "version": "1.0",
+    "author": "Baiju Dodhia",
+    "description": "Chrome extension of summarise and show important content from email to save time.",
+    "content_scripts": [
+        {
+            "matches": [
+                "*://mail.google.com/*"
+            ],
+            "js": [
+                "src/extensionInjector.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "web_accessible_resources": [
+        "dist/gmailJsLoader.js",
+        "dist/extension.js"
+    ],
+    "permissions": [
+        "https://*/*"
+    ]
+}
